@@ -1,0 +1,16 @@
+.capitalListContainer {
+    height: 385px;
+    overflow-y: auto;
+}
+
+.capitalList{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.capitalItem {
+    display: flex;
+    flex-direction: row;
+
+}

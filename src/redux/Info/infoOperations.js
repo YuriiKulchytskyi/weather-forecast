@@ -30,12 +30,12 @@ export const getCityForecast = createAsyncThunk(
         params: {
           key: API_KEY,
           q: credentials,
-          days: 14,
+          days: 5,
           aqi: "no",
           alerts: "no"
         },
       });
-    //   console.log(response.data.forecast.forecastday);
+      console.log(response.data);
 
       return response.data.forecast.forecastday;
     } catch (error) {

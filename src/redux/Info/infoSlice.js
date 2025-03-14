@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCityForecast, getCityInfo } from "./infoOperations";
 
 const initialState = {
-  location: "",
+  location: '',
   location_forecast: [],
   isLoading: false,
   error: null,
