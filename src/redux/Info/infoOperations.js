@@ -35,7 +35,6 @@ export const getCityForecast = createAsyncThunk(
           alerts: "no"
         },
       });
-      console.log(response.data);
 
       return response.data.forecast.forecastday;
     } catch (error) {
