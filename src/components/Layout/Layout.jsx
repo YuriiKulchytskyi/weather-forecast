@@ -1,13 +1,20 @@
 import { Link, Outlet } from "react-router-dom";
+import css from "./Layout.module.css";
 
 export const Layout = () => {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/forecast">Forecast</Link>
+      <nav className={css.navbar}>
+        <Link to="/" className={css.link}>
+          Home
+        </Link>
+        <Link to="/forecast" className={css.link}>
+          Forecast
+        </Link>
       </nav>
-      <Outlet />
+      <main className={css.mainContent}>
+        <Outlet />
+      </main>
     </>
   );
 };

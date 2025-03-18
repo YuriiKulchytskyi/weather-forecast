@@ -15,7 +15,6 @@ export const getWeatherForecast = createAsyncThunk(
           aqi: "no",
         },
       });
-      // console.log(res.data);
 
       return { city, data: res.data };
     } catch (error) {

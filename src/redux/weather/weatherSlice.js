@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   getWeatherForecast,
-  getWeatherForecastForUkraine,
+  // getWeatherForecastForUkraine,
 } from "./weatherOperations";
 
 const initialState = {
