@@ -5,6 +5,7 @@ import { ForecastList } from "./components/ForecastList/ForecastList";
 import { Search } from "./components/Search/Search";
 import { Forecast } from "./pages/Forecast";
 import { Layout } from "./components/Layout/Layout";
+import { LineGraph } from "./components/Chart/Line";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
       </Route>
     </Routes>
+    // <>
+    //   <LineGraph />
+    // </>
   );
 }
 

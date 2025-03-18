@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getWeatherForecast, getWeatherForecastForUkraine } from "./weatherOperations";
+import {
+  getWeatherForecast,
+  getWeatherForecastForUkraine,
+} from "./weatherOperations";
 
 const initialState = {
   cityWeather: {},
@@ -25,20 +28,20 @@ const weatherSlice = createSlice({
         state.isLoading = false;
         const { city, data } = action.payload;
         state.cityWeather[city] = data;
-      })
-      .addCase(getWeatherForecastForUkraine.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getWeatherForecastForUkraine.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      .addCase(getWeatherForecastForUkraine.fulfilled, (state, action) => {
-        state.error = null;
-        state.isLoading = false;
-        const { city, data } = action.payload;
-        state.ukrCityWeather[city] = data;
       });
+    // .addCase(getWeatherForecastForUkraine.pending, (state) => {
+    //   state.isLoading = true;
+    // })
+    // .addCase(getWeatherForecastForUkraine.rejected, (state, action) => {
+    //   state.isLoading = false;
+    //   state.error = action.payload;
+    // })
+    // .addCase(getWeatherForecastForUkraine.fulfilled, (state, action) => {
+    //   state.error = null;
+    //   state.isLoading = false;
+    //   const { city, data } = action.payload;
+    //   state.ukrCityWeather[city] = data;
+    // });
   },
 });
 
