@@ -1,17 +1,38 @@
 .capitalListContainer {
-    height: 385px;
-    width: 700px;
-    overflow-y: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.capitalList{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+.capitalList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  align-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .capitalItem {
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.capitalItem:hover {
+  transform: scale(1.05);
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
 }

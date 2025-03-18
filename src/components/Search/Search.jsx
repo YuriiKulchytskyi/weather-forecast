@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getCityInfo } from "../../redux/Info/infoOperations";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export const Search = () => {
   const [result, setResult] = useState("");
-
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -14,10 +15,13 @@ export const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getCityInfo(result));
+    navigate(`/forecast/${result}`)
+    setResult('')
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+<>
+<form onSubmit={handleSubmit}>
       <input
         type="text"
         name="location"
@@ -28,5 +32,6 @@ export const Search = () => {
         Search
       </button>
     </form>
-  );
+    <Outlet />
+</>  );
 };

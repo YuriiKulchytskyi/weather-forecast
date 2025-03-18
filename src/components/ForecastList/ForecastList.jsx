@@ -3,21 +3,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCityForecast } from "../../redux/Info/infoOperations";
 import { nanoid } from "nanoid";
 import css from "./ForecastList.module.css";
+import { useParams } from "react-router-dom";
 
 export const ForecastList = () => {
+  const { city } = useParams()
   const dispatch = useDispatch();
-  const location = useSelector((state) => state.info.location);
+  // const location = useSelector((state) => state.info.location);
   const location_forecast = useSelector(
     (state) => state.info.location_forecast
   );
 
+
+
+  
   useEffect(() => {
-    if (!location) return;
-    dispatch(getCityForecast(location));
-  }, [location]);
+    if (!city) return;
+    dispatch(getCityForecast(city));
+  }, [city]);
 
   return (
-    <ul className={css.forecastWrapper}>
+<>
+<h1>{city}</h1>
+<ul className={css.forecastWrapper}>
       {!location_forecast ? (
         <p>Choose location</p>
       ) : (
@@ -30,5 +37,6 @@ export const ForecastList = () => {
         ))
       )}
     </ul>
+</>
   );
 };
