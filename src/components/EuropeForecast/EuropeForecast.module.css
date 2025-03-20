@@ -36,3 +36,23 @@
   color: #555;
   margin-top: 20px;
 }
+
+.sunny {
+  background-color: yellow;
+}
+
+.cloudy {
+  background-color: lightgray;
+}
+
+.rainy {
+  background-color: lightblue;
+}
+
+.stormy {
+  background-color: darkgray;
+}
+
+.foggy {
+  background-color: rgba(200, 200, 200, 0.5);
+}
