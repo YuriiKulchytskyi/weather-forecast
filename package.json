@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yuriikulchytskyi.github.io/weather-forecast",
+  "homepage": "https://YuriiKulchytskyi.github.io/weather-forecast",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
