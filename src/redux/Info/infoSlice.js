@@ -38,8 +38,7 @@ const infoSlice = createSlice({
         state.error = null;
         state.isLoading = false;
         state.location_forecast = action.payload;
-        console.log(state.location_forecast);
-        
+    
       });
   },
 });

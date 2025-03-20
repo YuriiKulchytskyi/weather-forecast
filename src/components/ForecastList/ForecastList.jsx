@@ -16,6 +16,7 @@ export const ForecastList = () => {
 
   const [selectedDay, setSelectedDay] = useState(null);
   const [dataInfo, setDataInfo] = useState(null);
+  const [selectedChartType, setSelectedChartType] = useState("Temperature");
 
   const handleInfo = (day) => {
     setSelectedDay(selectedDay?.date === day.date ? null : day);
@@ -39,11 +40,14 @@ export const ForecastList = () => {
       setDataInfo(null);
       return;
     }
-    const data = {
-      labels: selectedDay.hour.map((hour) => hour.time.slice(11, 16)),
+
+    const labels = selectedDay.hour.map((hour) => hour.time.slice(11, 16));
+
+    const temperature = {
+      labels: labels,
       datasets: [
         {
-          label: "Temperatur",
+          label: "Temperature",
           data: selectedDay.hour.map((hour) => hour.temp_c),
           borderColor: "red",
           backgroundColor: "rgba(255, 0, 0, 0.3)",
@@ -60,28 +64,77 @@ export const ForecastList = () => {
         },
       ],
     };
-    setDataInfo(data);
-  }, [selectedDay]);
+
+    const humidity = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Humidity",
+          data: selectedDay.hour.map((hour) => hour.humidity),
+          borderColor: "blue",
+          backgroundColor: "lightblue",
+          fill: false,
+          tension: 0.4,
+        },
+      ],
+    };
+
+    const windSpeed = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Wind Speed",
+          data: selectedDay.hour.map((hour) => hour.wind_kph),
+          borderColor: "grey",
+          backgroundColor: "lightgrey",
+          fill: false,
+          tension: 0.4,
+        },
+      ],
+    };
+
+    switch (selectedChartType) {
+      case "Temperature":
+        setDataInfo(temperature);
+        break;
+      case "Humidity":
+        setDataInfo(humidity);
+        break;
+      case "Wind Speed":
+        setDataInfo(windSpeed);
+        break;
+      default:
+        setDataInfo(temperature);
+    }
+  }, [selectedDay, selectedChartType]);
 
   return (
     <>
       <h1>{city}</h1>
+
       <ul className={css.forecastWrapper}>
         {!location_forecast ? (
           <p>Choose location</p>
         ) : (
           location_forecast.map((day) => (
-            <NextDayForecast
-              key={day.date}
-              day={day}
-              handleInfo={handleInfo}
-            />
+            <NextDayForecast key={day.date} day={day} handleInfo={handleInfo} />
           ))
         )}
       </ul>
 
       {dataInfo && (
         <div className={css.canvaContainer}>
+          <div className={css.filter}>
+            <button onClick={() => setSelectedChartType("Temperature")} className={css.button}>
+              Temperature
+            </button>
+            <button onClick={() => setSelectedChartType("Humidity")} className={css.button}>
+              Humidity
+            </button>
+            <button onClick={() => setSelectedChartType("Wind Speed")} className={css.button}>
+              Wind Speed
+            </button>
+          </div>
           <div className={css.chartWrapper}>
             <Line data={dataInfo} className={css.canva} />
           </div>
