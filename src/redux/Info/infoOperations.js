@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY || "25b83dcd87ea4198972110556240406";
 
-axios.defaults.baseURL = "https://api.weatherapi.com/v1/";
+axios.defaults.baseURL = "http://api.weatherapi.com/v1/";
 
 export const getCityInfo = createAsyncThunk(
   "info/getCityInfo",
