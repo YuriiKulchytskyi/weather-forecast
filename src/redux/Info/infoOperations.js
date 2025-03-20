@@ -3,13 +3,13 @@ import axios from "axios";
 
 const API_KEY = "25b83dcd87ea4198972110556240406";
 
-axios.defaults.baseURL = "http://api.weatherapi.com/v1/";
+const BASE_URL = "http://api.weatherapi.com/v1/"
 
 export const getCityInfo = createAsyncThunk(
   "info/getCityInfo",
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.get("current.json", {
+      const response = await axios.get(`${BASE_URL}/current.json`, {
         params: {
           key: API_KEY,
           q: credentials,
@@ -27,7 +27,7 @@ export const getCityForecast = createAsyncThunk(
   "info/getCityForecast",
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.get("forecast.json", {
+      const response = await axios.get(`${BASE_URL}/forecast.json`, {
         params: {
           key: API_KEY,
           q: credentials,
