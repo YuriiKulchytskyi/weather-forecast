@@ -1,9 +1,9 @@
 {
-  "name": "forecast",
+  "name": "weather-forecast",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://YuriiKulchytskyi.github.io/forecast",
+  "homepage": "https://YuriiKulchytskyi.github.io/weather-forecast",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
