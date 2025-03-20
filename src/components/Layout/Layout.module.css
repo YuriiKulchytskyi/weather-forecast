@@ -24,4 +24,9 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+  .theme{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+  }

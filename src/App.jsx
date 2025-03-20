@@ -4,16 +4,21 @@ import { EuropeForecast } from "./components/EuropeForecast/EuropeForecast";
 import { Search } from "./components/Search/Search";
 import { Forecast } from "./pages/Forecast";
 import { Layout } from "./components/Layout/Layout";
+import LocationWeather from "./components/LocationWeather/LocationWeather";
 
 
 function App() {
+
+
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<EuropeForecast />}></Route>
+        <Route index element={<LocationWeather/>}></Route>
         <Route path="/forecast" element={<Search />}>
           <Route path=":city" element={<Forecast />} />
         </Route>
+        <Route path="/europe" element={<EuropeForecast/>}/>
       </Route>
     </Routes>
 
