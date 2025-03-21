@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/weather-forecast",
+  base: "/weather-forecast/",  // Важливо для правильного посилання на файли
 
   server: {
     proxy: {
