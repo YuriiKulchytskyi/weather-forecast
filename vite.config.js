@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/weatherapi": {
-        target: "http://api.weatherapi.com",
+        target: "https://api.weatherapi.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/weatherapi/, ""),
       },
