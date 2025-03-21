@@ -13,7 +13,7 @@ export const useGeolocation = () => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
-                setLocation({ latitude, longitude }); // Використовуємо об'єкт
+                setLocation({ latitude, longitude });
             },
             (err) => {
                 setError("Cannot get geolocation: " + err.message);

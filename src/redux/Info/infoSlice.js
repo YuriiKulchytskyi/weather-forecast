@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCityForecast, getCityInfo } from "./infoOperations";
+import { getCityByLocation, getCityForecast, getCityInfo } from "./infoOperations";
 
 const initialState = {
   location: '',
+  computed_location: {},
   location_forecast: [],
   isLoading: false,
   error: null,
@@ -23,8 +24,6 @@ const infoSlice = createSlice({
       .addCase(getCityInfo.fulfilled, (state, action) => {
         state.isLoading = false;
         state.location = action.payload;
-        console.log(state.location);
-        
       })
       .addCase(getCityForecast.pending, (state) => {
         state.isLoading = true;
@@ -38,7 +37,19 @@ const infoSlice = createSlice({
         state.error = null;
         state.isLoading = false;
         state.location_forecast = action.payload;
-    
+      })
+  
+      .addCase(getCityByLocation.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getCityByLocation.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getCityByLocation.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.computed_location = action.payload; 
       });
   },
 });

@@ -16,7 +16,7 @@ export const getWeatherForecast = createAsyncThunk(
           aqi: "no",
         },
       });
-
+      console.log()
       return { city, data: res.data };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

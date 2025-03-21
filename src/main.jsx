@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/weather-forecast">
+    <BrowserRouter basename="/weather-forecast/">
       <Provider store={store}>
         <App />
       </Provider>

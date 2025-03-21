@@ -13,6 +13,6 @@ export const ThemeSwitcher = () => {
     const dispatch = useDispatch()
 
     return (
-        <button type="button" onClick={() => dispatch(toggleTheme())}>{theme === 'light' ? "dark" : "light"}</button>
+        <button type="button" onClick={() => dispatch(toggleTheme())} style={{backgroundColor: 'transparent', border: 'none'}}>{theme === 'light' ? "☀️" : "🌙"}</button>
     )
 }
