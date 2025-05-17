@@ -1,13 +1,20 @@
 .capitalListContainer {
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+  position: relative;
+  
 }
 
 .capitalList {
+  /* position: absolute; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
@@ -15,10 +22,11 @@
   align-content: center;
   list-style: none;
   padding: 0;
+  box-sizing: border-box;
+
 }
 
 .capitalItem {
-  background: white;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -26,9 +34,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-/* .capitalItem:hover {
-  transform: scale(1.05);
-} */
 
 .loading {
   text-align: center;

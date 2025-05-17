@@ -82,7 +82,7 @@ export const EuropeForecast = () => {
         {europeanCapitals.map((capital) => (
           <li
             key={nanoid()}
-            className={css.capitalItem}
+            // className={css.capitalItem}
             onClick={() => navigate(`/forecast/${capital}`)}
           >
             <ForecastItem capital={capital} weather={cityWeather[capital]} />

@@ -1,9 +1,11 @@
 .capitalForecastItem {
+  
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     padding: 15px;
     border-radius: 10px;
     /* width: 180px; */
+    height: 200px;
     text-align: center;
     font-weight: bold;
     color: black;

@@ -49,7 +49,7 @@ const LocationWeather = () => {
 
               <h3>Інші показники:</h3>
               <p>Humidity: {city.current.humidity}%</p>
-              <p>Точка роси: {city.current.dewpoint_c}°C</p>
+              <p>Dew point: {city.current.dewpoint_c}°C</p>
               <p>Preasure: {city.current.pressure_mb} мб</p>
               <p>Visibility: {city.current.vis_km} км</p>
               <p>Index UV: {city.current.uv}</p>

@@ -20,3 +20,4 @@ const themeSlice = createSlice({
 export const themeReducer = themeSlice.reducer;
 
 export const { toggleTheme } = themeSlice.actions;
+
