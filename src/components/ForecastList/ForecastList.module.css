@@ -64,3 +64,22 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+  .canva{
+    width: auto;
+  }
+  
+
+  @media screen and (width < 768px){
+    .canvaContainer{
+      flex-direction: column;
+      margin: 20px 0;
+    }
+    .filter{
+      display: flex;
+      flex-direction: row;
+    }
+    .chartWrapper{
+      height: 300px;
+    }
+  }

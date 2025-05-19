@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 body {
   min-height: 100vh; /* мінімум — висота вікна, але розтягується з контентом */
